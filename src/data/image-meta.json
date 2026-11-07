@@ -1,0 +1,285 @@
+{
+  "/assets/bioterra-logo.webp": {
+    "width": 812,
+    "height": 660
+  },
+  "/assets/build-1.webp": {
+    "width": 800,
+    "height": 600
+  },
+  "/assets/care-1.webp": {
+    "width": 600,
+    "height": 800
+  },
+  "/assets/care-2.webp": {
+    "width": 1350,
+    "height": 1800,
+    "small": "/assets/care-2-960.webp"
+  },
+  "/assets/greuter-belaege-01.webp": {
+    "width": 1800,
+    "height": 1350,
+    "small": "/assets/greuter-belaege-01-960.webp"
+  },
+  "/assets/greuter-belaege-02.webp": {
+    "width": 1800,
+    "height": 1350,
+    "small": "/assets/greuter-belaege-02-960.webp"
+  },
+  "/assets/greuter-belaege-03.webp": {
+    "width": 1800,
+    "height": 876,
+    "small": "/assets/greuter-belaege-03-960.webp"
+  },
+  "/assets/greuter-belaege-04.webp": {
+    "width": 1350,
+    "height": 1800,
+    "small": "/assets/greuter-belaege-04-960.webp"
+  },
+  "/assets/greuter-gartengestaltung-ahorn.webp": {
+    "width": 1500,
+    "height": 1000,
+    "small": "/assets/greuter-gartengestaltung-ahorn-960.webp"
+  },
+  "/assets/greuter-home-dachgarten.webp": {
+    "width": 2048,
+    "height": 995,
+    "small": "/assets/greuter-home-dachgarten-960.webp"
+  },
+  "/assets/greuter-home-feuerplatz.webp": {
+    "width": 2048,
+    "height": 1365,
+    "small": "/assets/greuter-home-feuerplatz-960.webp"
+  },
+  "/assets/greuter-home-sauna.webp": {
+    "width": 939,
+    "height": 531
+  },
+  "/assets/greuter-home-steingarten.webp": {
+    "width": 1280,
+    "height": 960,
+    "small": "/assets/greuter-home-steingarten-960.webp"
+  },
+  "/assets/greuter-home-wasserbecken.webp": {
+    "width": 2048,
+    "height": 1365,
+    "small": "/assets/greuter-home-wasserbecken-960.webp"
+  },
+  "/assets/greuter-licht-01.webp": {
+    "width": 1600,
+    "height": 1200,
+    "small": "/assets/greuter-licht-01-960.webp"
+  },
+  "/assets/greuter-licht-02.webp": {
+    "width": 1600,
+    "height": 1200,
+    "small": "/assets/greuter-licht-02-960.webp"
+  },
+  "/assets/greuter-licht-03.webp": {
+    "width": 768,
+    "height": 1024
+  },
+  "/assets/greuter-licht-04.webp": {
+    "width": 1600,
+    "height": 1200,
+    "small": "/assets/greuter-licht-04-960.webp"
+  },
+  "/assets/greuter-licht-05.webp": {
+    "width": 1600,
+    "height": 777,
+    "small": "/assets/greuter-licht-05-960.webp"
+  },
+  "/assets/greuter-mauern-01.webp": {
+    "width": 1800,
+    "height": 1200,
+    "small": "/assets/greuter-mauern-01-960.webp"
+  },
+  "/assets/greuter-mauern-02.webp": {
+    "width": 1800,
+    "height": 1003,
+    "small": "/assets/greuter-mauern-02-960.webp"
+  },
+  "/assets/greuter-mauern-03.webp": {
+    "width": 1423,
+    "height": 1800,
+    "small": "/assets/greuter-mauern-03-960.webp"
+  },
+  "/assets/greuter-mauern-04.webp": {
+    "width": 1600,
+    "height": 1200,
+    "small": "/assets/greuter-mauern-04-960.webp"
+  },
+  "/assets/greuter-plaene-01.webp": {
+    "width": 932,
+    "height": 651
+  },
+  "/assets/greuter-plaene-02.webp": {
+    "width": 1399,
+    "height": 954,
+    "small": "/assets/greuter-plaene-02-960.webp"
+  },
+  "/assets/greuter-plaene-03.webp": {
+    "width": 1378,
+    "height": 959,
+    "small": "/assets/greuter-plaene-03-960.webp"
+  },
+  "/assets/greuter-plaene-04.webp": {
+    "width": 1416,
+    "height": 885,
+    "small": "/assets/greuter-plaene-04-960.webp"
+  },
+  "/assets/greuter-plaene-05.webp": {
+    "width": 1193,
+    "height": 802
+  },
+  "/assets/greuter-plaene-06.webp": {
+    "width": 1357,
+    "height": 841,
+    "small": "/assets/greuter-plaene-06-960.webp"
+  },
+  "/assets/greuter-plaene-07.webp": {
+    "width": 1430,
+    "height": 907,
+    "small": "/assets/greuter-plaene-07-960.webp"
+  },
+  "/assets/greuter-plaene-08.webp": {
+    "width": 1426,
+    "height": 761,
+    "small": "/assets/greuter-plaene-08-960.webp"
+  },
+  "/assets/greuter-stein-01.webp": {
+    "width": 1600,
+    "height": 1200,
+    "small": "/assets/greuter-stein-01-960.webp"
+  },
+  "/assets/greuter-stein-02.webp": {
+    "width": 1600,
+    "height": 1200,
+    "small": "/assets/greuter-stein-02-960.webp"
+  },
+  "/assets/greuter-stein-03.webp": {
+    "width": 1200,
+    "height": 1600
+  },
+  "/assets/greuter-stein-04.webp": {
+    "width": 1200,
+    "height": 1600
+  },
+  "/assets/greuter-stein-05.webp": {
+    "width": 1162,
+    "height": 1600
+  },
+  "/assets/greuter-stein-06.webp": {
+    "width": 1066,
+    "height": 1600
+  },
+  "/assets/greuter-stein-07.webp": {
+    "width": 1600,
+    "height": 1200,
+    "small": "/assets/greuter-stein-07-960.webp"
+  },
+  "/assets/greuter-wasser-01.webp": {
+    "width": 1280,
+    "height": 960,
+    "small": "/assets/greuter-wasser-01-960.webp"
+  },
+  "/assets/greuter-wasser-02.webp": {
+    "width": 1600,
+    "height": 1066,
+    "small": "/assets/greuter-wasser-02-960.webp"
+  },
+  "/assets/greuter-wasser-03.webp": {
+    "width": 1600,
+    "height": 1066,
+    "small": "/assets/greuter-wasser-03-960.webp"
+  },
+  "/assets/greuter-wasser-04.webp": {
+    "width": 1600,
+    "height": 1200,
+    "small": "/assets/greuter-wasser-04-960.webp"
+  },
+  "/assets/greuter-wasser-05.webp": {
+    "width": 1280,
+    "height": 960,
+    "small": "/assets/greuter-wasser-05-960.webp"
+  },
+  "/assets/greuter-wasser-06.webp": {
+    "width": 1280,
+    "height": 960,
+    "small": "/assets/greuter-wasser-06-960.webp"
+  },
+  "/assets/greuter-logo.png": {
+    "width": 693,
+    "height": 323
+  },
+  "/assets/home-1.webp": {
+    "width": 1800,
+    "height": 1200,
+    "small": "/assets/home-1-960.webp"
+  },
+  "/assets/home-13.webp": {
+    "width": 1800,
+    "height": 1200,
+    "small": "/assets/home-13-960.webp"
+  },
+  "/assets/home-5.webp": {
+    "width": 778,
+    "height": 388
+  },
+  "/assets/home-6.webp": {
+    "width": 778,
+    "height": 388
+  },
+  "/assets/home-9.webp": {
+    "width": 776,
+    "height": 776
+  },
+  "/assets/story-home-13.webp": {
+    "width": 1500,
+    "height": 1000,
+    "small": "/assets/story-home-13-960.webp"
+  },
+  "/assets/story-home-14.webp": {
+    "width": 825,
+    "height": 1100
+  },
+  "/assets/story-home-15.webp": {
+    "width": 1500,
+    "height": 1008,
+    "small": "/assets/story-home-15-960.webp"
+  },
+  "/assets/story-home-2.webp": {
+    "width": 776,
+    "height": 776
+  },
+  "/assets/story-home-5.webp": {
+    "width": 778,
+    "height": 388
+  },
+  "/assets/story-home-6.webp": {
+    "width": 778,
+    "height": 388
+  },
+  "/assets/story-home-7.webp": {
+    "width": 778,
+    "height": 388
+  },
+  "/assets/story-home-8.webp": {
+    "width": 776,
+    "height": 776
+  },
+  "/assets/team-1.webp": {
+    "width": 1471,
+    "height": 1212,
+    "small": "/assets/team-1-960.webp"
+  },
+  "/assets/team-2.webp": {
+    "width": 1555,
+    "height": 1314,
+    "small": "/assets/team-2-960.webp"
+  },
+  "/assets/team-3.webp": {
+    "width": 970,
+    "height": 996
+  }
+}

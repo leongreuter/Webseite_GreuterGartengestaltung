@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "greuter-preview",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "preview", "--", "--port", "4173", "--strictPort"],
+      "port": 4173
+    },
+    {
+      "name": "greuter-preview-subpath",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "set BASE_PATH=greuter-website&& npm.cmd run preview -- --port 4174 --strictPort"],
+      "port": 4174
+    },
+    {
+      "name": "greuter-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--", "--port", "5173", "--strictPort"],
+      "port": 5173
+    }
+  ]
+}
