@@ -17,6 +17,22 @@ export function Header() {
     return () => document.removeEventListener('keydown', onKey)
   }, [])
 
+  // Compact bar once scrolled; slides away on the way down, returns on the way up.
+  useEffect(() => {
+    const root = document.documentElement
+    let last = window.scrollY
+    const onScroll = () => {
+      const y = window.scrollY
+      root.classList.toggle('header-compact', y > 40)
+      if (y <= 260 || y < last - 4) root.classList.remove('header-hidden')
+      else if (y > last + 4 && !open) root.classList.add('header-hidden')
+      last = y
+    }
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [open])
+
   return (
     <div className="wrap site-header">
       <header>

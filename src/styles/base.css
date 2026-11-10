@@ -8,8 +8,16 @@
   --ink: #f5f7ef;
   --muted: #bbc8b3;
   --line: rgba(213, 229, 172, 0.23);
+  /* --header-height: space the header reserves in the page (never changes).
+     --header-bar: height of the visible bar (smaller once scrolled).
+     --header-offset: what sticky elements below must keep free (0 when hidden). */
   --header-height: 100px;
+  --header-bar: var(--header-height);
+  --header-compact: 68px;
+  --header-offset: var(--header-bar);
 }
+:root.header-compact { --header-bar: var(--header-compact); }
+:root.header-hidden { --header-offset: 0px; }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -64,18 +72,30 @@ main:focus { outline: none; }
 .caption .icon-arrow, .hero-bottom .icon-arrow { width: 15px; height: 15px; min-width: 15px; vertical-align: -3px; }
 
 /* Header */
+/* The outer box keeps its full height, so the page never jumps when the
+   visible bar (::before + <header>) gets compact or slides away. */
 .site-header {
-  position: sticky; top: 0; z-index: 30; background: #0f2204;
-  max-width: none; border-bottom: 1px solid var(--line);
+  position: sticky; top: 0; z-index: 30; max-width: none; height: var(--header-height);
+  pointer-events: none; transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.site-header::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: var(--header-bar);
+  background: #0f2204; border-bottom: 1px solid var(--line); pointer-events: auto;
+  transition: height 0.4s, background 0.4s;
 }
 .site-header header {
-  max-width: 1282px; margin: auto; height: var(--header-height);
+  max-width: 1282px; margin: auto; height: var(--header-bar);
   display: flex; align-items: center; justify-content: space-between; gap: 24px;
-  position: relative; z-index: 10;
+  position: relative; z-index: 10; pointer-events: auto; transition: height 0.4s;
 }
+.header-compact .site-header::before { background: #0f2204cc; -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+.header-hidden .site-header:not(:focus-within) { transform: translateY(-100%); }
 .brand-group { display: flex; align-items: center; gap: 25px; flex-shrink: 0; }
 .brand { display: flex; gap: 12px; align-items: center; }
 .brand img { width: 155px; height: auto; }
+.site-header .brand img, .site-header .bioterra-brand img { transition: width 0.4s; }
+.header-compact .site-header .brand img { width: 120px; }
+.header-compact .site-header .bioterra-brand img { width: 72px; }
 .bioterra-brand { display: flex; align-items: center; border-left: 1px solid #ffffff38; padding-left: 24px; }
 .bioterra-brand img { width: 112px; height: auto; object-fit: contain; }
 
@@ -99,6 +119,8 @@ header > .button { padding: 13px 20px; font-size: 12px; }
 
 /* Sections */
 .section { padding: 112px 0; }
+/* Keep the side padding of .wrap when both classes are combined. */
+.section.wrap { padding: 112px 5.5%; }
 .section-heading { display: grid; grid-template-columns: 1fr 1fr; gap: 6%; align-items: start; margin-bottom: 54px; }
 .section-heading h2 { max-width: 540px; margin-bottom: 0; }
 .section-heading p { max-width: 390px; margin-left: auto; color: var(--muted); font-size: 14px; padding-top: 12px; }
@@ -217,7 +239,9 @@ header > .button { padding: 13px 20px; font-size: 12px; }
   .bioterra-brand img { width: 100px; }
 }
 @media (max-width: 650px) {
-  :root { --header-height: 84px; }
+  :root { --header-height: 84px; --header-compact: 64px; }
+  .header-compact .site-header .brand img { width: 96px; }
+  .header-compact .site-header .bioterra-brand img { width: 56px; }
   .wrap { padding: 0 6%; }
   .site-header { padding: 0 6%; }
   .site-header header { gap: 12px; }
@@ -227,14 +251,15 @@ header > .button { padding: 13px 20px; font-size: 12px; }
   .bioterra-brand img { width: 90px; }
   .menubtn { display: block; }
   .main-nav {
-    display: none; position: absolute; top: var(--header-height); left: 0; right: 0;
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
     background: var(--cream); padding: 30px 7%; box-shadow: 0 20px 30px #0005;
-    max-height: calc(100dvh - 84px); overflow: auto;
+    max-height: calc(100dvh - var(--header-bar)); overflow: auto;
   }
   .main-nav.open { display: flex; flex-direction: column; align-items: stretch; }
   .main-nav a { font-size: 20px; padding: 15px 0; }
   .hero-bottom { font-size: 8px; gap: 20px; }
   .section { padding: 70px 0; }
+  .section.wrap { padding: 70px 6%; }
   .section-heading { display: block; margin-bottom: 32px; }
   .section-heading p { margin: 20px 0 0; }
   .steps { grid-template-columns: 1fr; gap: 25px; }
