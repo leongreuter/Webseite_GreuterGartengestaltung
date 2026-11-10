@@ -100,6 +100,13 @@ place, message, reply`. Bitte dann auch den Datenschutztext anpassen.
   Vor/Zurück, Tastatur und Wischgeste in allen Dienstleistungsgalerien,
   Wischgeste in der Hero-Slideshow, SVG-Icons statt Textsymbolen (☰, Ⅱ, ×),
   Fehlermeldungen direkt am Formularfeld.
+- Animationen aus der Vorschau (`vorschau/animationen.html`), eingebaut sind:
+  01 Hero-Zoom, 02 Bild-Vorhang, 03 Parallax, 04 Wort für Wort,
+  05 Seitenübergang, 07 Header (wird beim Scrollen kompakt, verschwindet beim
+  Runterscrollen und kommt beim Hochscrollen zurück), 08 Fortschrittslinie in
+  der Themenleiste auf „Dienstleistungen“, 13 Linien-Ornament im Abschnitt
+  Gartenpflege/Biodiversität. Mit der Systemeinstellung „Bewegung reduzieren“
+  sind alle Animationen ausgeschaltet.
 - Die Holz-Galerie hatte im Original nur generische Alt-Texte. Sie wurden
   durch Bildbeschreibungen ersetzt.
 

@@ -4,7 +4,7 @@ import { ArrowIcon } from '../components/ArrowIcon'
 import { CtaSection } from '../components/CtaSection'
 import { Img } from '../components/Img'
 import { useLightbox } from '../components/Lightbox'
-import { Lines, Words } from '../components/Motion'
+import { Lines, Twig, useScrollProgress, Words } from '../components/Motion'
 import { serviceSteps } from '../data/content'
 import { chapterFootLabel, chapters, gallerySlots, type GalleryImage, type ServiceChapter } from '../data/galleries'
 import { useInViewClass } from '../hooks/useInViewClass'
@@ -70,23 +70,25 @@ function Chapter({ chapter }: { chapter: ServiceChapter }) {
 
 export default function Services() {
   const root = useRef<HTMLDivElement>(null)
+  const chaptersRef = useRef<HTMLDivElement>(null)
+  const linksRef = useRef<HTMLDivElement>(null)
+  const progressRef = useRef<HTMLSpanElement>(null)
   const [current, setCurrent] = useState<string | null>(null)
+
+  // Progress line and current topic in the sticky topic navigation.
+  useScrollProgress(chaptersRef, progressRef, setCurrent)
 
   useInViewClass(root, '.chapter', 'is-entering', 0.06)
   useInViewClass(root, '.section-heading p, .steps article, .cta .button', 'scroll-enter')
   useInViewClass(root, '.words', 'is-in', 0.3)
 
-  // Highlight the chapter currently in view in the sticky topic navigation.
+  // On narrow screens the topic row scrolls sideways: keep the current topic visible.
   useEffect(() => {
-    const el = root.current
-    if (!el || !('IntersectionObserver' in window)) return
-    const observer = new IntersectionObserver(
-      (entries) => entries.forEach((entry) => entry.isIntersecting && setCurrent(entry.target.id)),
-      { rootMargin: '-90px 0px -55% 0px', threshold: 0 },
-    )
-    el.querySelectorAll('.chapter').forEach((c) => observer.observe(c))
-    return () => observer.disconnect()
-  }, [])
+    const row = linksRef.current
+    const link = row?.querySelector<HTMLElement>('[aria-current]')
+    if (!row || !link || row.scrollWidth <= row.clientWidth) return
+    row.scrollTo({ left: link.offsetLeft - (row.clientWidth - link.offsetWidth) / 2, behavior: 'smooth' })
+  }, [current])
 
   return (
     <div ref={root}>
@@ -107,15 +109,18 @@ export default function Services() {
         </div>
 
         <nav className="story-navigation" aria-label="Gartenbau-Themen">
-          {chapters.map((c) => (
-            <a key={c.id} href={`#${c.id}`} aria-current={current === c.id ? 'location' : undefined}>
-              <span>{c.number}</span>
-              {c.title}
-            </a>
-          ))}
+          <div className="story-links" ref={linksRef}>
+            {chapters.map((c) => (
+              <a key={c.id} href={`#${c.id}`} aria-current={current === c.id ? 'location' : undefined}>
+                <span>{c.number}</span>
+                {c.title}
+              </a>
+            ))}
+          </div>
+          <span className="story-progress" ref={progressRef} aria-hidden="true" />
         </nav>
 
-        <div className="chapters">
+        <div className="chapters" ref={chaptersRef}>
           {chapters.map((chapter) => (
             <Chapter key={chapter.id} chapter={chapter} />
           ))}
@@ -123,6 +128,7 @@ export default function Services() {
       </div>
 
       <section className="section dark care-section" aria-label="Gartenpflege und Biodiversität">
+        <Twig />
         <div className="wrap section-heading">
           <div id="pflege">
             <div className="eyebrow">Gartenpflege</div>
